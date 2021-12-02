@@ -5,52 +5,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
     <title>Django E-Commerce</title>
 </head>
 <body>
-    <div class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <div class="navbar-header">
                 <a href="" class="navbar-brand">Django E-Commerce</a>
-                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" 
+                    aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
-            <div class="navbar-collapse collapse" id="navbar-main">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">Início</a>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="nav navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">
+                            Início
+                        </a>
                     </li>
-                    <li class="dropdown">
-                        <a 
-                            class="dropdown-toggle"
-                            data-toggle="dropdown"
-                            href="#" 
-                            id="download"
-                        >
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" 
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Categorias <span class="caret"></span>
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="download">
-                            <li><a href="">Notebooks</a></li>
-                            <li><a href="">Acessórios</a></li>
-                            <li><a href="">Celulares</a></li>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Notebooks</a></li>
+                            <li><a class="dropdown-item" href="#">Acessórios</a></li>
+                            <li><a class="dropdown-item" href="#">Celulares</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="contact.html">Contato</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contato</a>
                     </li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Minha Conta</a></li>
-                </ul>
+                <span class="navbar-text">
+                    <ul class="nav navbar-nav">
+                        <li><a class="nav-link" href="#">Minha Conta</a></li>
+                    </ul>
+                </span>
             </div>
         </div>
-    </div>
-    <div class="container">
-        <div class="jumbotron page-header">
+    </nav>
+    <div class="container py-5">
+        <div class="h-100 p-5 text-white bg-dark rounded-3">
             <h1>{{ title|capfirst }}</h1>
             <p>
                 {% for item in texts %}
@@ -61,24 +61,31 @@
                 {% endfor %}
             </p>
             <p>
-                <a class="btn btn-primary">Saiba mais</a>
+                <a class="btn btn-outline-light">Saiba mais</a>
             </p>
         </div>
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="list-unstyled">
-                        <li class="pull-right">
-                            <a href="#top">Voltar ao Topo</a>
-                        </li>
-                        <li><a href="">Início</a></li>
-                        <li><a href="">Produtos</a></li>
-                        <li><a href="">Contato</a></li>
-                        <li><a href="">Termos e Privacidade</a></li>
-                    </ul>
-                </div>
-            </div>
-        </footer>
     </div>
+    <footer class="bg-dark text-center text-white fixed-bottom">
+        <div class="container p-4 pb-0">
+            <section class="mb-4">
+                <p class="d-flex justify-content-center align-items-center">
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                        <ul class="nav navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="navbar-brand" href="">Início</a></li>
+                            <li class="nav-item"><a class="navbar-brand" href="">Produtos</a></li>
+                            <li class="nav-item"><a class="navbar-brand" href="">Contato</a></li>
+                            <li class="nav-item"><a class="navbar-brand" href="">Termos e Privacidade</a></li>
+                        </ul>
+                        <span class="navbar-text">
+                            <ul class="nav navbar-nav">
+                                <li class="nav-item"><a class="navbar-brand" href="#">Voltar ao Topo</a></li>
+                            </ul>
+                        </span>
+                    <nav>
+                </p>
+            </section>  
+        </div>
+    </footer>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 </body>
 </html>
