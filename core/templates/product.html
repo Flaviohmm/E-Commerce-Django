@@ -1,17 +1,33 @@
 {% extends "base.html" %}
 
+{% block title %}
+    Produto | {{ block.super }}
+{% endblock title %}    
+
 {% block container %}
-    <div class="h-100 p-5 bg-light border rounded-3">
-        <h1>Django E-Commerce</h1>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis porro, 
-            itaque enim dolores consequuntur quisquam facere recusandae suscipit magni 
-            animi commodi corporis earum voluptatem alias. Voluptatibus nemo quod 
-            debitis cumque.
-        </p>
-        <p>
-            <a class="btn btn-outline-secondary">Saiba mais</a>
-        </p>
+    <div class="page-header">
+        <h1>Página do Produto</h1>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <a href="#" class="thumbnail">
+                <img src="http://placehold.it/350x250" alt="" />
+            </a>
+        </div>
+        <div class="col-sm-8">
+            <dl>
+                <dt>Lorem ipsum:</dt>
+                <dd>Lorem ipsum dolor sit amet</dd>
+                <dt>Lorem ipsum:</dt>
+                <dd>Lorem ipsum dolor sit amet</dd>
+                <dt>Lorem ipsum:</dt>
+                <dd>Lorem ipsum dolor sit amet</dd>
+                <dt>Lorem ipsum:</dt>
+                <dd>Lorem ipsum dolor sit amet</dd>
+                <dt>Lorem ipsum:</dt>
+                <dd>Lorem ipsum dolor sit amet</dd>
+            </dl>
+        </div>
     </div>
 {% endblock container %}
 
