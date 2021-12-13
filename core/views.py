@@ -2,6 +2,8 @@
 
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.core.mail import send_mail
+from django.conf import settings
 
 from .forms import ConatctForm
 
@@ -12,12 +14,16 @@ def index(request):
 
 
 def contact(request):
-    if request.method == 'POST':
-        form = ConatctForm(request.POST)
-    else:
-        form = ConatctForm()
+    success = False
+    form = ConatctForm(request.POST or None)
+    
+    if form.is_valid():
+        form.send_mail()
+        success = True
 
     context = {
-        'form': form
+        'form': form,
+        'success': success
     }
+
     return render(request, 'contact.html', context)
