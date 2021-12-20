@@ -25,7 +25,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 SECRET_KEY = 'django-insecure-w_h!!v4fiz7g7o65%qz+p+n43#zhxf=wefn9yoomm+dll4vw$l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -73,6 +73,9 @@ TEMPLATES = [
                 # apps
                 'catalog.context_processors.categories',
             ],
+            'libraries': {
+                'pagination': 'core.templatetags.pagination',
+            }
         },
     },
 ]

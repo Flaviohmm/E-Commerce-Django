@@ -1,0 +1,9 @@
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center" style="padding-top: 40px;">
+        {% for page in paginator.page_range %}
+            <li {% if page_obj.number == page %} class="active"{% endif %}>
+                <a class="page-link" href="?page={{ page }}{{ getvars }}">{{ page }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</nav>
