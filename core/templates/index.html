@@ -16,25 +16,33 @@
 {% endblock container %}
 
 {% block footer %}
-    <footer class="footer mt-auto py-3 bg-dark text-white fixed-bottom">
-        <div class="container p-4 pb-0">
-            <section class="mb-4">
-                <p class="d-flex justify-content-center align-items-center">
-                    <div class="navbar navbar-expand-lg navbar-dark bg-dark">
-                        <ul class="nav navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="navbar-brand" href="">Início</a></li>
-                            <li class="nav-item"><a class="navbar-brand" href="">Produtos</a></li>
-                            <li class="nav-item"><a class="navbar-brand" href="">Contato</a></li>
-                            <li class="nav-item"><a class="navbar-brand" href="">Termos e Privacidade</a></li>
-                        </ul>
-                        <span class="navbar-text">
-                            <ul class="nav navbar-nav">
-                                <li class="nav-item"><a class="navbar-brand" href="#">Voltar ao Topo</a></li>
-                            </ul>
-                        </span>
-                    <nav>
-                </p>
-            </section>  
+    <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Termos e Privacidade</a>
+                    </li>
+                    <ul class="navbar-nav" style="position: absolute; right: 20px;">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Voltar ao Topo</a>
+                        </li>
+                    </ul>
+                </ul>
+            </div>
         </div>
-    </footer>
+    </nav>
 {% endblock footer %}
