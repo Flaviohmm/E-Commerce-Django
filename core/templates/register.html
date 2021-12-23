@@ -31,26 +31,6 @@
                     </div>
                 </div>
             {% endfor %}
-            {% comment %} 
-                <div class="form-group {% if form.password1.errors %} has-error{% endif %}" style="padding-bottom: 10px;">
-                    <label for="{{ form.password1.auto_id }}" class="form-label">{{ form.password1.label }}</label>
-                    <div class="col-md-12">
-                        {% render_field form.password1 class="form-control" %}
-                        {% for error in form.password1.errors %}
-                            <span class="help-block">{{ error }}</span>
-                        {% endfor %}
-                    </div>
-                </div>
-                <div class="form-group {% if form.password2.errors %} has-error{% endif %}" style="padding-bottom: 10px;">
-                    <label for="{{ form.password2.auto_id }}" class="form-label">{{ form.password2.label }}</label>
-                    <div class="col-md-12">
-                        {% render_field form.password2 class="form-control" %}
-                        {% for error in form.password2.errors %}
-                            <span class="help-block">{{ error }}</span>
-                        {% endfor %}
-                    </div>
-                </div> 
-            {% endcomment %}
             <div class="form-group">
                 <div class="col-md-12 col-md-offset-3">
                   <button type="submit" class="btn btn-secondary" style="margin-top: 10px;">Registrar</button>
