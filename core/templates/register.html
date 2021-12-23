@@ -3,14 +3,14 @@
 {% load widget_tweaks %}
 
 {% block title %}
-    Entrar | {{ block.super }}
+    Registro | {{ block.super }}
 {% endblock title %}
 
 {% block container %}
 <div class="row">
     <div class="col-md-8 col-md-offset-2 p-5 mb-4 bg-light rounded-3">
         <div class="page-header" style="padding-bottom: 15px;">
-            <h1>Entrar</h1>
+            <h1>Registro</h1>
         </div>
         <form class="form-horizontal" method="post">
             {% csrf_token %}
@@ -19,27 +19,41 @@
                     {{ error }}
                 </div>
             {% endfor %}
-            <div class="form-group {% if form.username.errors %} has-error{% endif %}" style="padding-bottom: 10px;">
-                <label for="{{ form.username.auto_id }}" class="form-label">{{ form.username.label }}</label>
-                <div class="col-md-12">
-                    {% render_field form.username class="form-control" %}
-                    {% for error in form.username.errors %}
-                        <span class="help-block">{{ error }}</span>
-                    {% endfor %}
+            {% for field in form %}
+                <div class="form-group {% if field.errors %} has-error{% endif %}" style="padding-bottom: 10px;">
+                    <label for="{{ field.auto_id }}" class="form-label">{{ field.label }}</label>
+                    <div class="col-md-12">
+                        {% render_field field class="form-control" %}
+                        {% for error in field.errors %}
+                            <br>
+                            <span class="help-block alert-danger">{{ error }}</span>
+                        {% endfor %}
+                    </div>
                 </div>
-            </div>
-            <div class="form-group {% if form.password.errors %} has-error{% endif %}" style="padding-bottom: 10px;">
-                <label for="{{ form.password.auto_id }}" class="form-label">{{ form.password.label }}</label>
-                <div class="col-md-12">
-                    {% render_field form.password class="form-control" %}
-                    {% for error in form.password.errors %}
-                        <span class="help-block">{{ error }}</span>
-                    {% endfor %}
+            {% endfor %}
+            {% comment %} 
+                <div class="form-group {% if form.password1.errors %} has-error{% endif %}" style="padding-bottom: 10px;">
+                    <label for="{{ form.password1.auto_id }}" class="form-label">{{ form.password1.label }}</label>
+                    <div class="col-md-12">
+                        {% render_field form.password1 class="form-control" %}
+                        {% for error in form.password1.errors %}
+                            <span class="help-block">{{ error }}</span>
+                        {% endfor %}
+                    </div>
                 </div>
-            </div>
+                <div class="form-group {% if form.password2.errors %} has-error{% endif %}" style="padding-bottom: 10px;">
+                    <label for="{{ form.password2.auto_id }}" class="form-label">{{ form.password2.label }}</label>
+                    <div class="col-md-12">
+                        {% render_field form.password2 class="form-control" %}
+                        {% for error in form.password2.errors %}
+                            <span class="help-block">{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                </div> 
+            {% endcomment %}
             <div class="form-group">
                 <div class="col-md-12 col-md-offset-3">
-                  <button type="submit" class="btn btn-secondary" style="margin-top: 10px;">Enviar</button>
+                  <button type="submit" class="btn btn-secondary" style="margin-top: 10px;">Registrar</button>
                 </div>
             </div>
         </form>
@@ -78,4 +92,3 @@
     </div>
 </nav>
 {% endblock footer %}
-
