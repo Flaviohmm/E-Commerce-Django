@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     # apps
     'core',
+    'accounts',
     'catalog',
 ]
 
@@ -156,6 +157,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # Auth
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'index'
+AUTH_USER_MODEL = 'accounts.User'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
