@@ -1,0 +1,16 @@
+.margin-top {
+    margin-top: 2em;
+}
+
+.margin-bottom {
+    margin-bottom: 4em;
+}
+
+a {
+    text-decoration: none;
+    color: #343a40;
+}
+
+a:hover {
+    color: #889099;
+}

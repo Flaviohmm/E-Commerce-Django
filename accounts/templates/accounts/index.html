@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %} Minha Conta {% endblock title %}
+
+{% block container %}
+<ol class="list-group list-group-horizontal margin-bottom">
+    <li class="list-group-item list-group-item-secondary"><a href="#">Início</a></li>
+    <li class="list-group-item list-group-item-action list-group-item-secondary active">Minha Conta</li>
+</ol> 
+<div class="row">
+    <div class="col-md-4">
+        <div class="list-group list-group-item-secondary">
+            <a href="#" class="list-group-item list-group-item-action list-group-item-secondary active">Minha Conta</a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">Alterar Dados</a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">Alterar Senha</a>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <h2>Bem vindo Fulano</h2>
+    </div>
+</div>
+{% endblock container %}
