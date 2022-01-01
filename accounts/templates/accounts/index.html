@@ -10,13 +10,21 @@
 <div class="row">
     <div class="col-md-4">
         <div class="list-group list-group-item-secondary">
-            <a href="#" class="list-group-item list-group-item-action list-group-item-secondary active">Minha Conta</a>
-            <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">Alterar Dados</a>
-            <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">Alterar Senha</a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-secondary active">
+                Minha Conta
+            </a>
+            <a href="{% url 'accounts:update_user' %}" class="list-group-item list-group-item-action list-group-item-secondary">
+                Alterar Dados
+            </a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">
+                Alterar Senha
+            </a>
         </div>
     </div>
-    <div class="col-md-8">
-        <h2>Bem vindo Fulano</h2>
+    <div class="col-md-8" style="padding-left: 70px;">
+        {% block accounts_container %} 
+            <h2>Bem vindo Fulano</h2>
+        {% endblock accounts_container %}
     </div>
 </div>
 {% endblock container %}
